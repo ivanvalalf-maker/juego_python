@@ -1,0 +1,61 @@
+ID,Fecha,Recorrido,Inspector,Hora_inicio,Hora_fin,Jornada,Bloque,Zona,Zona_agrupada,Espacio,Personas,Nivel_aforo,Aforo_cod,AA_instalados,AA_encendidos,AA_innecesarios,LED_instalados,LED_encendidos,LED_innecesarias,Potencia_AA_kW,Potencia_LED_kW,Potencia_desperdiciada_kW,Estado,Ineficiente
+1,2026-09-14,R01,Juan Jaramillo,07:00,07:05,1-Mañana (6-10h),Bloque 08,B1-Bloques 1-11,Regular (Bloques 1-11),B08-319,31,3-Alto (>20),3,2,1,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+2,2026-09-14,R01,Juan Jaramillo,07:06,07:11,1-Mañana (6-10h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona B,0,0-Vacío,0,4,3,3,12,7,7,2.64,0.224,2.864,Ineficiente,1
+3,2026-09-14,R01,Juan Jaramillo,07:12,07:17,1-Mañana (6-10h),Bloque 01,B1-Bloques 1-11,Regular (Bloques 1-11),B01-306,7,2-Medio (6-20),2,2,1,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+4,2026-09-14,R01,Juan Jaramillo,07:18,07:23,1-Mañana (6-10h),Bloque 09,B1-Bloques 1-11,Regular (Bloques 1-11),B09-205,32,3-Alto (>20),3,2,1,0,8,6,0,0.0,0.0,0.0,Eficiente,0
+5,2026-09-14,R01,Juan Jaramillo,07:24,07:29,1-Mañana (6-10h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona B,10,2-Medio (6-20),2,4,1,0,12,9,0,0.0,0.0,0.0,Eficiente,0
+6,2026-09-15,R02,Juan Guresso,10:30,10:35,2-Mediodía (10-13h),Bloque 10,B1-Bloques 1-11,Regular (Bloques 1-11),B10-319,0,0-Vacío,0,2,2,2,8,8,8,1.76,0.256,2.016,Ineficiente,1
+7,2026-09-15,R02,Juan Guresso,10:36,10:41,2-Mediodía (10-13h),Bloque 03,B1-Bloques 1-11,Regular (Bloques 1-11),B03-112,0,0-Vacío,0,2,2,2,8,3,3,1.76,0.096,1.856,Ineficiente,1
+8,2026-09-15,R02,Juan Guresso,10:42,10:47,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 7,10,2-Medio (6-20),2,3,1,0,12,12,0,0.0,0.0,0.0,Eficiente,0
+9,2026-09-15,R02,Juan Guresso,10:48,10:53,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 3,3,1-Bajo (1-5),1,3,3,0,12,9,0,0.0,0.0,0.0,Eficiente,0
+10,2026-09-15,R02,Juan Guresso,10:54,10:59,2-Mediodía (10-13h),Bloque 02,B1-Bloques 1-11,Regular (Bloques 1-11),B02-113,40,3-Alto (>20),3,2,2,0,8,8,0,0.0,0.0,0.0,Eficiente,0
+11,2026-09-16,R03,Marlon Lamar,14:00,14:05,3-Tarde (13-17h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona A,0,0-Vacío,0,4,4,4,12,5,5,3.52,0.16,3.68,Ineficiente,1
+12,2026-09-16,R03,Marlon Lamar,14:06,14:11,3-Tarde (13-17h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona C,0,0-Vacío,0,4,2,2,12,10,10,1.76,0.32,2.08,Ineficiente,1
+13,2026-09-16,R03,Marlon Lamar,14:12,14:17,3-Tarde (13-17h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona C,0,0-Vacío,0,4,2,2,12,7,7,1.76,0.224,1.984,Ineficiente,1
+14,2026-09-16,R03,Marlon Lamar,14:18,14:23,3-Tarde (13-17h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 2,31,3-Alto (>20),3,3,3,0,12,11,0,0.0,0.0,0.0,Eficiente,0
+15,2026-09-16,R03,Marlon Lamar,14:24,14:29,3-Tarde (13-17h),Bloque 05,B1-Bloques 1-11,Regular (Bloques 1-11),B05-305,0,0-Vacío,0,2,1,1,8,8,8,0.88,0.256,1.136,Ineficiente,1
+16,2026-09-17,R04,Jesús Bohórquez,18:00,18:05,4-Noche (17-21h),Bloque 05,B1-Bloques 1-11,Regular (Bloques 1-11),B05-107,39,3-Alto (>20),3,2,2,0,8,5,0,0.0,0.0,0.0,Eficiente,0
+17,2026-09-17,R04,Jesús Bohórquez,18:06,18:11,4-Noche (17-21h),Bloque 05,B1-Bloques 1-11,Regular (Bloques 1-11),B05-401,0,0-Vacío,0,2,0,0,8,0,0,0.0,0.0,0.0,Eficiente,0
+18,2026-09-17,R04,Jesús Bohórquez,18:12,18:17,4-Noche (17-21h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona A,0,0-Vacío,0,4,3,3,12,5,5,2.64,0.16,2.8,Ineficiente,1
+19,2026-09-17,R04,Jesús Bohórquez,18:18,18:23,4-Noche (17-21h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 4,24,3-Alto (>20),3,3,1,0,12,6,0,0.0,0.0,0.0,Eficiente,0
+20,2026-09-17,R04,Jesús Bohórquez,18:24,18:29,4-Noche (17-21h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona A,0,0-Vacío,0,4,0,0,12,0,0,0.0,0.0,0.0,Eficiente,0
+21,2026-09-18,R05,Iván Valdeblanquez,07:20,07:25,1-Mañana (6-10h),Bloque 05,B1-Bloques 1-11,Regular (Bloques 1-11),B05-109,1,1-Bajo (1-5),1,2,1,0,8,8,0,0.0,0.0,0.0,Eficiente,0
+22,2026-09-18,R05,Iván Valdeblanquez,07:26,07:31,1-Mañana (6-10h),Bloque 10,B1-Bloques 1-11,Regular (Bloques 1-11),B10-318,0,0-Vacío,0,2,0,0,8,0,0,0.0,0.0,0.0,Eficiente,0
+23,2026-09-18,R05,Iván Valdeblanquez,07:32,07:37,1-Mañana (6-10h),Bloque 10,B1-Bloques 1-11,Regular (Bloques 1-11),B10-116,0,0-Vacío,0,2,1,1,8,6,6,0.88,0.192,1.072,Ineficiente,1
+24,2026-09-18,R05,Iván Valdeblanquez,07:38,07:43,1-Mañana (6-10h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 4,0,0-Vacío,0,3,2,2,12,9,9,1.76,0.288,2.048,Ineficiente,1
+25,2026-09-18,R05,Iván Valdeblanquez,07:44,07:49,1-Mañana (6-10h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona D,15,2-Medio (6-20),2,4,2,0,12,9,0,0.0,0.0,0.0,Eficiente,0
+26,2026-09-21,R06,Alexander Parra,10:50,10:55,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 7,0,0-Vacío,0,3,0,0,12,0,0,0.0,0.0,0.0,Eficiente,0
+27,2026-09-21,R06,Alexander Parra,10:56,11:01,2-Mediodía (10-13h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-119,3,1-Bajo (1-5),1,2,1,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+28,2026-09-21,R06,Alexander Parra,11:02,11:07,2-Mediodía (10-13h),La Central,B3-La Central,Continua (B12 + Central),Central-Zona C,0,0-Vacío,0,4,2,2,12,9,9,1.76,0.288,2.048,Ineficiente,1
+29,2026-09-21,R06,Alexander Parra,11:08,11:13,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 7,14,2-Medio (6-20),2,3,3,0,12,11,0,0.0,0.0,0.0,Eficiente,0
+30,2026-09-21,R06,Alexander Parra,11:14,11:19,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 5,34,3-Alto (>20),3,3,1,0,12,10,0,0.0,0.0,0.0,Eficiente,0
+31,2026-09-22,R07,Juan Jaramillo,14:20,14:25,3-Tarde (13-17h),Bloque 06,B1-Bloques 1-11,Regular (Bloques 1-11),B06-111,35,3-Alto (>20),3,2,2,0,8,8,0,0.0,0.0,0.0,Eficiente,0
+32,2026-09-22,R07,Juan Jaramillo,14:26,14:31,3-Tarde (13-17h),Bloque 05,B1-Bloques 1-11,Regular (Bloques 1-11),B05-312,0,0-Vacío,0,2,0,0,8,0,0,0.0,0.0,0.0,Eficiente,0
+33,2026-09-22,R07,Juan Jaramillo,14:32,14:37,3-Tarde (13-17h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 5,0,0-Vacío,0,3,3,3,12,7,7,2.64,0.224,2.864,Ineficiente,1
+34,2026-09-22,R07,Juan Jaramillo,14:38,14:43,3-Tarde (13-17h),Bloque 07,B1-Bloques 1-11,Regular (Bloques 1-11),B07-309,14,2-Medio (6-20),2,2,2,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+35,2026-09-22,R07,Juan Jaramillo,14:44,14:49,3-Tarde (13-17h),Bloque 06,B1-Bloques 1-11,Regular (Bloques 1-11),B06-202,0,0-Vacío,0,2,0,0,8,0,0,0.0,0.0,0.0,Eficiente,0
+36,2026-09-23,R08,Juan Guresso,18:20,18:25,4-Noche (17-21h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 3,0,0-Vacío,0,3,3,3,12,8,8,2.64,0.256,2.896,Ineficiente,1
+37,2026-09-23,R08,Juan Guresso,18:26,18:31,4-Noche (17-21h),Bloque 10,B1-Bloques 1-11,Regular (Bloques 1-11),B10-101,39,3-Alto (>20),3,2,1,0,8,8,0,0.0,0.0,0.0,Eficiente,0
+38,2026-09-23,R08,Juan Guresso,18:32,18:37,4-Noche (17-21h),Bloque 03,B1-Bloques 1-11,Regular (Bloques 1-11),B03-311,0,0-Vacío,0,2,1,1,8,8,8,0.88,0.256,1.136,Ineficiente,1
+39,2026-09-23,R08,Juan Guresso,18:38,18:43,4-Noche (17-21h),Bloque 07,B1-Bloques 1-11,Regular (Bloques 1-11),B07-217,0,0-Vacío,0,2,2,2,8,6,6,1.76,0.192,1.952,Ineficiente,1
+40,2026-09-23,R08,Juan Guresso,18:44,18:49,4-Noche (17-21h),Bloque 07,B1-Bloques 1-11,Regular (Bloques 1-11),B07-407,39,3-Alto (>20),3,2,1,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+41,2026-09-24,R09,Marlon Lamar,07:40,07:45,1-Mañana (6-10h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 4,0,0-Vacío,0,3,0,0,12,0,0,0.0,0.0,0.0,Eficiente,0
+42,2026-09-24,R09,Marlon Lamar,07:46,07:51,1-Mañana (6-10h),Bloque 03,B1-Bloques 1-11,Regular (Bloques 1-11),B03-209,14,2-Medio (6-20),2,2,2,0,8,5,0,0.0,0.0,0.0,Eficiente,0
+43,2026-09-24,R09,Marlon Lamar,07:52,07:57,1-Mañana (6-10h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-413,0,0-Vacío,0,2,2,2,8,5,5,1.76,0.16,1.92,Ineficiente,1
+44,2026-09-24,R09,Marlon Lamar,07:58,08:03,1-Mañana (6-10h),Bloque 04,B1-Bloques 1-11,Regular (Bloques 1-11),B04-105,2,1-Bajo (1-5),1,2,2,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+45,2026-09-24,R09,Marlon Lamar,08:04,08:09,1-Mañana (6-10h),Bloque 09,B1-Bloques 1-11,Regular (Bloques 1-11),B09-415,14,2-Medio (6-20),2,2,1,0,8,4,0,0.0,0.0,0.0,Eficiente,0
+46,2026-09-25,R10,Jesús Bohórquez,11:10,11:15,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 6,18,2-Medio (6-20),2,3,3,0,12,12,0,0.0,0.0,0.0,Eficiente,0
+47,2026-09-25,R10,Jesús Bohórquez,11:16,11:21,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 3,0,0-Vacío,0,3,2,2,12,7,7,1.76,0.224,1.984,Ineficiente,1
+48,2026-09-25,R10,Jesús Bohórquez,11:22,11:27,2-Mediodía (10-13h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-109,0,0-Vacío,0,2,0,0,8,0,0,0.0,0.0,0.0,Eficiente,0
+49,2026-09-25,R10,Jesús Bohórquez,11:28,11:33,2-Mediodía (10-13h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 1,0,0-Vacío,0,3,2,2,12,6,6,1.76,0.192,1.952,Ineficiente,1
+50,2026-09-25,R10,Jesús Bohórquez,11:34,11:39,2-Mediodía (10-13h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-319,0,0-Vacío,0,2,1,1,8,3,3,0.88,0.096,0.976,Ineficiente,1
+51,2026-09-28,R11,Iván Valdeblanquez,14:40,14:45,3-Tarde (13-17h),Bloque 06,B1-Bloques 1-11,Regular (Bloques 1-11),B06-104,20,2-Medio (6-20),2,2,1,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+52,2026-09-28,R11,Iván Valdeblanquez,14:46,14:51,3-Tarde (13-17h),Bloque 08,B1-Bloques 1-11,Regular (Bloques 1-11),B08-109,2,1-Bajo (1-5),1,2,2,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+53,2026-09-28,R11,Iván Valdeblanquez,14:52,14:57,3-Tarde (13-17h),Bloque 03,B1-Bloques 1-11,Regular (Bloques 1-11),B03-414,0,0-Vacío,0,2,2,2,8,6,6,1.76,0.192,1.952,Ineficiente,1
+54,2026-09-28,R11,Iván Valdeblanquez,14:58,15:03,3-Tarde (13-17h),Bloque 09,B1-Bloques 1-11,Regular (Bloques 1-11),B09-314,2,1-Bajo (1-5),1,2,1,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+55,2026-09-28,R11,Iván Valdeblanquez,15:04,15:09,3-Tarde (13-17h),Bloque 06,B1-Bloques 1-11,Regular (Bloques 1-11),B06-318,26,3-Alto (>20),3,2,2,0,8,4,0,0.0,0.0,0.0,Eficiente,0
+56,2026-09-29,R12,Alexander Parra,18:40,18:45,4-Noche (17-21h),Bloque 12,B2-Bloque 12,Continua (B12 + Central),B12-Lab 8,0,0-Vacío,0,3,3,3,12,8,8,2.64,0.256,2.896,Ineficiente,1
+57,2026-09-29,R12,Alexander Parra,18:46,18:51,4-Noche (17-21h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-303,4,1-Bajo (1-5),1,2,1,0,8,5,0,0.0,0.0,0.0,Eficiente,0
+58,2026-09-29,R12,Alexander Parra,18:52,18:57,4-Noche (17-21h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-408,6,2-Medio (6-20),2,2,2,0,8,7,0,0.0,0.0,0.0,Eficiente,0
+59,2026-09-29,R12,Alexander Parra,18:58,19:03,4-Noche (17-21h),Bloque 01,B1-Bloques 1-11,Regular (Bloques 1-11),B01-311,0,0-Vacío,0,2,0,0,8,0,0,0.0,0.0,0.0,Eficiente,0
+60,2026-09-29,R12,Alexander Parra,19:04,19:09,4-Noche (17-21h),Bloque 11,B1-Bloques 1-11,Regular (Bloques 1-11),B11-205,37,3-Alto (>20),3,2,2,0,8,5,0,0.0,0.0,0.0,Eficiente,0
