@@ -3,30 +3,44 @@
 ## Archivos
 | Archivo | Contenido |
 |---|---|
-| `ABP_Fase2_Generacion_Hidroelectrica_ElNino.docx` / `.pdf` | Documento APA 7 solo de la Fase 2 (11 páginas, con el código) |
+| `ABP_Fase2_Generacion_Hidroelectrica_ElNino.docx` / `.pdf` | Documento de la Fase 2 (12 páginas, con el código) |
 | `generacion_hidro_nino.py` | Programa en Python (menú, condicionales y ciclos) |
-| `pseudocodigo_fase2.psc` | Pseudocódigo PSeInt de la Fase 2 |
+| `pseudocodigo_fase2.psc` | Pseudocódigo en PSeInt |
 
 ## Cómo ejecutar
-1. Abrir una terminal en esta carpeta.
-2. `python generacion_hidro_nino.py`
-3. Para el Escenario 1: opción 1 → `R1, 30, 500, 2500, 1750, 610, 240`; opción 2 tres veces:
-   - `CH-1, 330, 200, 175, 0.90, 290`
-   - `CH-2, 195, 130, 150, 0.88, 165`
-   - `CH-3, 85, 55, 120, 0.86, 60`
-   - opción 4 → debe dar **255,34 GWh, NORMAL, OPERACIÓN NORMAL**.
+1. Abrir una terminal en esta carpeta y escribir `python generacion_hidro_nino.py`.
+2. Opción 1 → `R1`, `30`, `500`, `85`, `385`, `240`.
+3. Opción 2 tres veces:
+   - `CH-1`, `200`, `175`, `0.90`, `290`
+   - `CH-2`, `130`, `150`, `0.88`, `165`
+   - `CH-3`, `55`, `120`, `0.86`, `60`
+4. Opción 4 → debe dar **255,34 GWh, riesgo NORMAL, alerta OPERACIÓN NORMAL**.
 
-## Qué explicar (en orden)
-1. **Observaciones de la Fase 1** (Tabla 1): se corrigió la autonomía, se reemplazaron las referencias CREG/XM y se probó la validación por central.
-2. **Ciclos**: `while` repite el menú y repite cada pregunta hasta recibir un dato válido; `for` recorre la lista de centrales para buscar repetidas, consultar y generar el reporte.
-3. **Condicionales**: simple (nombre repetido), doble (limitar potencia), múltiple `if/elif/else` (estado de la central y riesgo), anidada (menú con RN-09), compuesta `and/or` (alerta).
-4. **Reglas de negocio** RN-01 a RN-10 (Tabla 4).
-5. **Matrices de decisiones** (Tablas 6 y 7) y **pruebas de escritorio** (Tablas 8, 9 y 10).
+## Cómo está hecho el programa (para explicarlo)
+1. **Listas**: cada central se guarda en la misma posición de varias listas (`nombres`, `energias`, `estados`...).
+2. **while del menú**: repite el menú hasta que se elige la opción 5.
+3. **while de validación**: si un dato está fuera de rango, muestra un error y lo vuelve a pedir.
+4. **for**: recorre las listas para buscar nombres repetidos, consultar una central y sumar en el reporte.
+5. **if / elif / else**: escoge la opción del menú, el estado de la central y el riesgo.
+6. **and / or**: se usan en las validaciones y en la alerta.
+
+## Fórmulas
+| Cálculo | Fórmula |
+|---|---|
+| Potencia bruta (MW) | 9,81 × caudal × altura × eficiencia / 1000 |
+| Potencia efectiva | la menor entre la potencia bruta y la nominal |
+| Energía (GWh) | potencia efectiva × horas / 1000 |
+| Factor de planta (%) | potencia efectiva × horas / (potencia nominal × días × 24) × 100 |
+| Cobertura (%) | energía total / demanda × 100 |
+| Déficit (GWh) | demanda − energía total (si es positivo) |
+| Índice de aportes | caudal total / caudal medio |
 
 ## Preguntas probables
 | Pregunta | Respuesta corta |
 |---|---|
-| ¿Por qué `try/except`? | `int()` y `float()` fallan si se escriben letras; `except ValueError` evita que el programa se cierre. |
-| ¿Por qué cambió la autonomía? | Antes usaba el agua turbinada real; en sequía se turbina menos y la autonomía "subía". Ahora usa el agua necesaria para cubrir la demanda. |
-| ¿Qué es una central "LIMITADA"? | Su potencia hidráulica supera la nominal; el agua sobrante se vierte sin generar energía. |
-| ¿Cómo se relaciona con instalaciones deficientes? | El estado de cada central detecta vertimiento, subutilización (FP < 30 %) y eficiencia baja (η < 0,85). |
+| ¿Qué es una central LIMITADA? | Tiene más agua de la que su generador puede convertir; el sobrante se desperdicia. |
+| ¿Qué es SUBUTILIZADA? | Su factor de planta es menor que 30 %: genera mucho menos de lo que podría. |
+| ¿Cuándo hay El Niño en el programa? | Cuando el caudal total es menor que el 80 % del caudal medio (índice < 0,80). |
+| ¿Por qué se usa `.upper()`? | Para que "ch-1" y "CH-1" se consideren el mismo nombre. |
+| ¿Qué pasa si escribo una letra en un número? | El programa se detiene; es una limitación que se mejorará en la siguiente fase. |
+| ¿Cómo responde al eje problematizador? | El estado de cada central muestra qué instalación tiene problemas. |
