@@ -20,7 +20,7 @@
 1. **Observaciones de la Fase 1** (Tabla 1): se corrigió la autonomía, se reemplazaron las referencias CREG/XM y se probó la validación por central.
 2. **Ciclos**: `while` repite el menú y repite cada pregunta hasta recibir un dato válido; `for` recorre la lista de centrales para buscar repetidas, consultar y generar el reporte.
 3. **Condicionales**: simple (nombre repetido), doble (limitar potencia), múltiple `if/elif/else` (estado de la central y riesgo), anidada (menú con RN-09), compuesta `and/or` (alerta).
-4. **Reglas de negocio** RN-01 a RN-11 (Tabla 4).
+4. **Reglas de negocio** RN-01 a RN-10 (Tabla 4).
 5. **Matrices de decisiones** (Tablas 6 y 7) y **pruebas de escritorio** (Tablas 8, 9 y 10).
 
 ## Preguntas probables
