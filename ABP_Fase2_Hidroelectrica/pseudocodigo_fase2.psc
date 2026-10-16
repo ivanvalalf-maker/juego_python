@@ -1,54 +1,135 @@
 Algoritmo HidroelectricaNino
-  Definir opcion, n, i, dias, horas Como Entero
-  Definir vu, vi, qmed, dem Como Real
-  Definir hayGen, repetida Como Logico
-  Definir nomNuevo Como Caracter
-  Dimension nom[50], qa[50], qt[50], h[50], ef[50], pn[50]
-  Definir nom Como Caracter
-  Definir qa, qt, h, ef, pn Como Real
+  Definir opcion, dias, horas, n, i, conProblema Como Entero
+  Definir nivel, caudalMedio, demanda Como Real
+  Definir caudal, altura, eficiencia, pNominal, pBruta, pEfectiva, energia, factor Como Real
+  Definir energiaTotal, caudalTotal, cobertura, deficit, indiceAportes Como Real
+  Definir region, nombre, buscado, estado, riesgo, alerta Como Caracter
+  Definir datosListos, repetido, encontrada, nino Como Logico
+  Dimension nombres[50], estados[50], energias[50], caudales[50]
+  Definir nombres, estados Como Caracter
+  Definir energias, caudales Como Real
   n <- 0
-  hayGen <- Falso
+  datosListos <- Falso
   opcion <- 0
   Mientras opcion <> 5 Hacer
     Escribir "1.Generales 2.Registrar 3.Consultar 4.Reporte 5.Salir"
     Leer opcion
     Segun opcion Hacer
       1:
+        Leer region
         Repetir
-          Leer dias, horas, vu, vi, qmed, dem
-        Hasta Que dias>=28 Y dias<=31 Y horas>=1 Y horas<=24*dias Y vu>0 Y vi>=0 Y vi<=vu Y qmed>0 Y dem>0
-        hayGen <- Verdadero
+          Leer dias
+        Hasta Que dias >= 28 Y dias <= 31
+        Repetir
+          Leer horas
+        Hasta Que horas >= 1 Y horas <= dias * 24
+        Repetir
+          Leer nivel
+        Hasta Que nivel >= 0 Y nivel <= 100
+        Repetir
+          Leer caudalMedio, demanda
+        Hasta Que caudalMedio > 0 Y demanda > 0
+        datosListos <- Verdadero
       2:
-        Si n >= 50 Entonces
-          Escribir "ERROR: maximo de centrales"
+        Si datosListos = Falso Entonces
+          Escribir "Primero registre los datos generales"
         SiNo
-          Leer nomNuevo
-          repetida <- Falso
+          Leer nombre
+          repetido <- Falso
           Para i <- 1 Hasta n Hacer
-            Si nom[i] = nomNuevo Entonces
-              repetida <- Verdadero
+            Si nombres[i] = nombre Entonces
+              repetido <- Verdadero
             FinSi
           FinPara
-          Si repetida Entonces
-            Escribir "ERROR: central repetida"
+          Si repetido Entonces
+            Escribir "ERROR: esa central ya existe"
           SiNo
-            n <- n + 1
-            nom[n] <- nomNuevo
             Repetir
-              Leer qa[n], qt[n], h[n], ef[n], pn[n]
-            Hasta Que qa[n]>=0 Y qt[n]>0 Y h[n]>0 Y ef[n]>0 Y ef[n]<=1 Y pn[n]>0
+              Leer caudal, altura, eficiencia, pNominal
+            Hasta Que caudal > 0 Y altura > 0 Y eficiencia > 0 Y eficiencia <= 1 Y pNominal > 0
+            pBruta <- 9.81 * caudal * altura * eficiencia / 1000
+            Si pBruta > pNominal Entonces
+              pEfectiva <- pNominal
+            SiNo
+              pEfectiva <- pBruta
+            FinSi
+            energia <- pEfectiva * horas / 1000
+            factor <- pEfectiva * horas / (pNominal * dias * 24) * 100
+            Si pBruta > pNominal Entonces
+              estado <- "LIMITADA"
+            SiNo
+              Si factor < 30 Entonces
+                estado <- "SUBUTILIZADA"
+              SiNo
+                Si eficiencia < 0.85 Entonces
+                  estado <- "EFICIENCIA BAJA"
+                SiNo
+                  estado <- "ADECUADA"
+                FinSi
+              FinSi
+            FinSi
+            n <- n + 1
+            nombres[n] <- nombre
+            estados[n] <- estado
+            energias[n] <- energia
+            caudales[n] <- caudal
           FinSi
         FinSi
-      3, 4:
-        Si NO hayGen O n = 0 Entonces
-          Escribir "Registre datos generales y una central"
+      3:
+        Leer buscado
+        encontrada <- Falso
+        Para i <- 1 Hasta n Hacer
+          Si nombres[i] = buscado Entonces
+            encontrada <- Verdadero
+            Escribir energias[i], " GWh ", estados[i]
+          FinSi
+        FinPara
+        Si encontrada = Falso Entonces
+          Escribir "No existe una central con ese nombre"
+        FinSi
+      4:
+        energiaTotal <- 0
+        caudalTotal <- 0
+        conProblema <- 0
+        Para i <- 1 Hasta n Hacer
+          Escribir nombres[i], " ", energias[i], " GWh ", estados[i]
+          energiaTotal <- energiaTotal + energias[i]
+          caudalTotal <- caudalTotal + caudales[i]
+          Si estados[i] <> "ADECUADA" Entonces
+            conProblema <- conProblema + 1
+          FinSi
+        FinPara
+        cobertura <- energiaTotal / demanda * 100
+        Si energiaTotal < demanda Entonces
+          deficit <- demanda - energiaTotal
         SiNo
-          Si opcion = 3 Entonces
-            ConsultarCentral(n, nom, qt, h, ef, pn, dias, horas)
+          deficit <- 0
+        FinSi
+        indiceAportes <- caudalTotal / caudalMedio
+        nino <- indiceAportes < 0.80
+        Si nivel > 70 Y cobertura >= 100 Entonces
+          riesgo <- "NORMAL"
+        SiNo
+          Si nivel > 50 Entonces
+            riesgo <- "SEGUIMIENTO"
           SiNo
-            GenerarReporte(n, nom, qa, qt, h, ef, pn, dias, horas, vu, vi, qmed, dem)
+            Si nivel > 30 Entonces
+              riesgo <- "ALERTA"
+            SiNo
+              riesgo <- "CRITICO"
+            FinSi
           FinSi
         FinSi
+        Si riesgo = "CRITICO" O (deficit > 0 Y nino) Entonces
+          alerta <- "ACTIVAR RESPALDO TERMICO"
+        SiNo
+          Si deficit > 0 O nino Entonces
+            alerta <- "VIGILANCIA"
+          SiNo
+            alerta <- "OPERACION NORMAL"
+          FinSi
+        FinSi
+        Escribir energiaTotal, cobertura, deficit, riesgo, alerta
       5:
         Escribir "Fin del programa"
       De Otro Modo:
@@ -56,84 +137,3 @@ Algoritmo HidroelectricaNino
     FinSegun
   FinMientras
 FinAlgoritmo
-
-SubProceso GenerarReporte(n, nom, qa, qt, h, ef, pn, dias, horas, vu, vi, qmed, dem)
-  Definir i Como Entero
-  Definir pb, pe, e, et, va, vt, qat, pinst, vf, nivel, ia, cob, deficit, aut Como Real
-  Definir riesgo, alerta Como Caracter
-  et <- 0; va <- 0; vt <- 0; qat <- 0; pinst <- 0
-  Para i <- 1 Hasta n Hacer
-    pb <- 1000 * 9.81 * qt[i] * h[i] * ef[i] / 1000000
-    Si pb > pn[i] Entonces
-      pe <- pn[i]
-    SiNo
-      pe <- pb
-    FinSi
-    e <- pe * horas / 1000
-    Escribir nom[i], " ", e, " GWh ", EstadoCentral(pb, pn[i], e, ef[i], dias)
-    et <- et + e
-    pinst <- pinst + pn[i]
-    qat <- qat + qa[i]
-    va <- va + qa[i] * 86400 * dias / 1000000
-    vt <- vt + qt[i] * 3600 * horas / 1000000
-  FinPara
-  vf <- vi + va - vt
-  Si vf > vu Entonces
-    vf <- vu
-  SiNo
-    Si vf < 0 Entonces
-      vf <- 0
-    FinSi
-  FinSi
-  nivel <- vf / vu * 100
-  ia <- qat / qmed
-  cob <- et / dem * 100
-  Si et < dem Entonces
-    deficit <- dem - et
-  SiNo
-    deficit <- 0
-  FinSi
-  aut <- vf / ((vt / dias) * (dem / et))
-  Si nivel > 70 Y cob >= 100 Entonces
-    riesgo <- "NORMAL"
-  SiNo
-    Si nivel > 50 Entonces
-      riesgo <- "SEGUIMIENTO"
-    SiNo
-      Si nivel > 30 Entonces
-        riesgo <- "ALERTA"
-      SiNo
-        riesgo <- "CRITICO"
-      FinSi
-    FinSi
-  FinSi
-  Si riesgo = "CRITICO" O (deficit > 0 Y ia < 0.8) Entonces
-    alerta <- "ACTIVAR RESPALDO TERMICO"
-  SiNo
-    Si deficit > 0 O ia < 0.8 Entonces
-      alerta <- "VIGILANCIA"
-    SiNo
-      alerta <- "OPERACION NORMAL"
-    FinSi
-  FinSi
-  Escribir et, nivel, ia, cob, deficit, aut, riesgo, alerta
-FinSubProceso
-
-SubProceso estado <- EstadoCentral(pb, pn, e, ef, dias)
-  Definir estado Como Caracter
-  Definir fp Como Real
-  fp <- e / (pn * dias * 24 / 1000) * 100
-  Si pb > pn Entonces
-    estado <- "LIMITADA"
-  SiNo
-    Si fp < 30 Entonces
-      estado <- "SUBUTILIZADA"
-    SiNo
-      Si ef < 0.85 Entonces
-        estado <- "EFICIENCIA BAJA"
-      SiNo
-        estado <- "ADECUADA"
-      FinSi
-    FinSi
-  FinSi
-FinSubProceso
