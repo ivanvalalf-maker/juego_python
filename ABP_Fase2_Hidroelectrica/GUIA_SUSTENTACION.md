@@ -3,7 +3,7 @@
 ## Archivos
 | Archivo | Contenido |
 |---|---|
-| `ABP_Fase2_Generacion_Hidroelectrica_ElNino.docx` / `.pdf` | Documento APA 7 completo (Fase 1 corregida + Fase 2) |
+| `ABP_Fase2_Generacion_Hidroelectrica_ElNino.docx` / `.pdf` | Documento APA 7 solo de la Fase 2 (11 páginas, con el código) |
 | `generacion_hidro_nino.py` | Programa en Python (menú, condicionales y ciclos) |
 | `pseudocodigo_fase2.psc` | Pseudocódigo PSeInt de la Fase 2 |
 
@@ -17,11 +17,11 @@
    - opción 4 → debe dar **255,34 GWh, NORMAL, OPERACIÓN NORMAL**.
 
 ## Qué explicar (en orden)
-1. **Observaciones de la Fase 1** (Tabla 13): se corrigió la autonomía, se reemplazaron las referencias CREG/XM y se probó la validación por central.
+1. **Observaciones de la Fase 1** (Tabla 1): se corrigió la autonomía, se reemplazaron las referencias CREG/XM y se probó la validación por central.
 2. **Ciclos**: `while` repite el menú y repite cada pregunta hasta recibir un dato válido; `for` recorre la lista de centrales para buscar repetidas, consultar y generar el reporte.
 3. **Condicionales**: simple (nombre repetido), doble (limitar potencia), múltiple `if/elif/else` (estado de la central y riesgo), anidada (menú con RN-09), compuesta `and/or` (alerta).
-4. **Reglas de negocio** RN-01 a RN-11 (Tabla 15).
-5. **Matrices de decisiones** (Tablas 17–19) y **pruebas de escritorio** (Tablas 22–24).
+4. **Reglas de negocio** RN-01 a RN-11 (Tabla 4).
+5. **Matrices de decisiones** (Tablas 6 y 7) y **pruebas de escritorio** (Tablas 8, 9 y 10).
 
 ## Preguntas probables
 | Pregunta | Respuesta corta |
